@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.solomonm.traffic.yugo.collect.global.mapper.YugoMapper">
+
+    <insert id="insertInciInfoList" parameterType="java.util.List">
+        INSERT INTO DMB_ACC_INCI (
+            INCI_ID, OCCUR_TIME, END_EXPECT_TIME, LINKID, ROAD_CLASS, 
+            CONDITION_CODE, INCI_TITLE, INCI_CONTENT, XGPS, YGPS, 
+            ROAD_NAME, WORKTIME
+        )
+        VALUES
+	    <foreach collection="list" item="item" separator=",">
+            (
+                #{item.inciId}, #{item.occurTime}, #{item.endExpectTime}, #{item.linkId}, #{item.roadClass},
+                #{item.conditionCode}, #{item.inciTitle}, #{item.inciContent}, #{item.xgps}, #{item.ygps},
+                #{item.roadName}, DATE_FORMAT(DATE_ADD(NOW(), INTERVAL 9 HOUR), '%Y%m%d%H%i%s')
+            )
+        </foreach>
+    </insert>
+
+</mapper>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="euc-kr"?>
+<packetdefinition>
+
+    <packet name="INCI_INFO">
+        <field name="INCI_TOTAL_CNT"        type="Loop"             length="4"      childCnt="11"   childTotalLength="1179"
+            childName1="INCI_ID"            childType1="Char"       childLength1="12"
+            childName2="OCCUR_TIME"         childType2="Char"       childLength2="14"
+            childName3="END_EXPECT_TIME"    childType3="Char"       childLength3="14"
+            childName4="LINKID"             childType4="Hex"        childLength4="4"
+            childName5="ROAD_CLASS"         childType5="Hex"        childLength5="1"
+            childName6="CONDITION_CODE"     childType6="Lsb"        childLength6="2"
+            childName7="INCI_TITLE"         childType7="String"     childLength7="512"
+            childName8="INCI_CONTENT"       childType8="String"     childLength8="512"
+            childName9="LONGITUDE_X"        childType9="Map"        childLength9="4"
+            childName10="LATITUDE_Y"        childType10="Map"       childLength10="4"
+            childName11="ROAD_NAME"         childType11="String"    childLength11="100"
+        />
+    </packet>
+
+    <packet name="INCI_INFO_KR">
+        <field name="INCI_TOTAL_CNT"        type="Loop"             length="4"      childCnt="11"   childTotalLength="1179"
+            childName1="INCI_ID"            childType1="Hex"        childLength1="12"
+            childName2="OCCUR_TIME"         childType2="Hex"        childLength2="14"
+            childName3="END_EXPECT_TIME"    childType3="Hex"        childLength3="14"
+            childName4="LINKID"             childType4="Hex"        childLength4="4"
+            childName5="ROAD_CLASS"         childType5="Hex"        childLength5="1"
+            childName6="CONDITION_CODE"     childType6="Hex"        childLength6="2"
+            childName7="INCI_TITLE"         childType7="String"     childLength7="512"
+            childName8="INCI_CONTENT"       childType8="String"     childLength8="512"
+            childName9="LONGITUDE_X"        childType9="Hex"        childLength9="4"
+            childName10="LATITUDE_Y"        childType10="Hex"       childLength10="4"
+            childName11="ROAD_NAME"         childType11="String"    childLength11="100"
+        />
+    </packet>
+
+</packetdefinition>

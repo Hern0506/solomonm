@@ -1,0 +1,40 @@
+logging:
+    file:
+        path: ./logs
+        filename: collect
+        max-size: 500MB
+        max-history: 7
+    level:
+        org:
+            springframework: 
+                boot:
+                    autoconfigura: ERROR
+            solomonm:
+                traffic:
+                    yugo:
+                        collect: INFO
+
+spring:
+    datasource:
+        driver-class-name: org.mariadb.jdbc.Driver
+        url: jdbc:mariadb://ugo-db.mariadb.database.azure.com:3306/dmb_manager
+        username: solomonmdb@ugo-db
+        password: thffhahs@1
+
+mybatis:
+    mapper-locations: classpath:mapper/*.xml
+
+ftp:
+    police:
+        host: 192.169.7.12
+        port: 4500
+        user: kroad6
+        pswd: kroad6
+        serverPath: /data/
+        # host: 210.127.49.32
+        # port: 21
+        # user: exftp
+        # pswd: exftp12#
+        # serverPath: /kroad/downloadFTP/
+        clientPath: C:/Users/rrr/Work/Solomon_Traffic/data/downloadFTP/
+        fileName: INCI_INFO
