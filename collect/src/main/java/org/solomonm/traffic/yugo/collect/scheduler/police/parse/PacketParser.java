@@ -8,7 +8,6 @@ import java.util.Hashtable;
 
 import javax.xml.transform.TransformerException;
 
-// import org.apache.log4j.Logger;
 import org.apache.xpath.XPathAPI;
 import org.solomonm.traffic.yugo.collect.global.d9bean.PacketRule;
 import org.solomonm.traffic.yugo.collect.global.util.PacketUtil;
@@ -16,15 +15,11 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-// import com.nts.PacketRule;
-
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class PacketParser extends PacketRule {
 
-    // static Logger log = Logger.getLogger(PacketParser.class);
-    
     public Hashtable<String, String> readPacketIn(HashMap<String, String> str, String rcvMessage) {
         Hashtable<String, String> ht = new Hashtable<String, String>();
 

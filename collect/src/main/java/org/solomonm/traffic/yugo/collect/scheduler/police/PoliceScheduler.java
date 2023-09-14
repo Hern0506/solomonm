@@ -13,8 +13,8 @@ import java.util.StringTokenizer;
 
 import org.solomonm.traffic.yugo.collect.global.mapper.YugoMapper;
 import org.solomonm.traffic.yugo.collect.global.util.FTPUtil;
+import org.solomonm.traffic.yugo.collect.global.vo.DmbAccInciVo;
 import org.solomonm.traffic.yugo.collect.scheduler.police.parse.PacketParser;
-import org.solomonm.traffic.yugo.collect.scheduler.police.vo.PoliceYugoVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Async;
@@ -82,7 +82,7 @@ public class PoliceScheduler {
 			}
 
 			// 3. 유고정보 파싱
-			List<PoliceYugoVo> saveInfoList = ftpParser();
+			List<DmbAccInciVo> saveInfoList = ftpParser();
 
 			// 4. 유고정보 DB Insert
 			try {
@@ -97,8 +97,8 @@ public class PoliceScheduler {
 		log.info("Police Yugo Collect End");
 	}
 
-	public List<PoliceYugoVo> ftpParser() {
-		List<PoliceYugoVo> ReturnList = new ArrayList<PoliceYugoVo>();
+	public List<DmbAccInciVo> ftpParser() {
+		List<DmbAccInciVo> ReturnList = new ArrayList<DmbAccInciVo>();
 
 		BufferedInputStream bis = null;
 		FileInputStream fis = null;
@@ -140,7 +140,7 @@ public class PoliceScheduler {
 					for (int k = 1; k <= InciCnt; k++) {
 						log.info("COUNT(" + k + ")" + "INCI_ID(" + htRes.get("INCI_ID" + k) + ")" + "OCCUR_TIME(" + htRes.get("OCCUR_TIME" + k) + ")" + "END_EXPECT_TIME(" + htRes.get("END_EXPECT_TIME" + k) + ")" + "LINKID(" + htRes.get("LINKID" + k) + ")" + "ROAD_CLASS(" + htRes.get("ROAD_CLASS" + k) + ")" + "CONDITION_CODE(" + htRes.get("CONDITION_CODE" + k) + ")" + "INCI_TITLE(" + htRes.get("INCI_TITLE" + k) + ")" + "INCI_CONTENT(" + htRes.get("INCI_CONTENT" + k) + ")" + "XGPS(" + htRes.get("LONGITUDE_X" + k) + ")" + "YGPS(" + htRes.get("LATITUDE_Y" + k) + ")" + "ROAD_NAME(" + htRes.get("ROAD_NAME" + k) + ")");
 
-						PoliceYugoVo tempVo = new PoliceYugoVo();
+						DmbAccInciVo tempVo = new DmbAccInciVo();
 
 						tempVo.setInciId(htRes.get("INCI_ID" + k));
 						tempVo.setOccurTime(htRes.get("OCCUR_TIME" + k));

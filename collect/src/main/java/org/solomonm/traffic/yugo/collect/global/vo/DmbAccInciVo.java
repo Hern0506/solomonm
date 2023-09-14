@@ -1,9 +1,9 @@
-package org.solomonm.traffic.yugo.collect.scheduler.police.vo;
+package org.solomonm.traffic.yugo.collect.global.vo;
 
 import lombok.Data;
 
 @Data
-public class PoliceYugoVo {
+public class DmbAccInciVo {
     
     private String inciId;
     private String occurTime;
